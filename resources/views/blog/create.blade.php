@@ -10,6 +10,18 @@
     </div>
 
 </div>
+@if ($errors->any())
+<div class="w-4/5 m-auto">
+<ul>
+    @foreach ($errors as $error)
+        <li class="w-2/5 text-gray-50 bg-red-70 rounded-2xl py-4">
+            {{ $error }}
+        </li>
+    @endforeach
+</ul>
+</div>
+
+@endif
 
 <div class="w-4/5 m-auto pt-20">
     <form action="/blog" enctype="multipart/form-data" method="post">
@@ -24,7 +36,7 @@
     <div class="bg-grey-lighter">
         <label for="" class="w-44 flex flex-col items-center px-2 py-3 bg-white-rouded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
             <span class="mt-2 text-base leading-normal">Select a file</span>
-            <input type="file" name="image" class="hidden">
+            <input type="file" name="image" >
         </label>
     </div>
     <button type="submit" class=" mt-2 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
