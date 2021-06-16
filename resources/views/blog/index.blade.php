@@ -10,6 +10,15 @@
     </div>
 
 </div>
+@if (session()->has('message'))
+<div class="m-auto pl-2 w-4/5 mt-10">
+<p class="text-gray-50 bg-green-500 rounded-2xl py-4 w-2/6">
+{{ session()->get('message') }}
+</p>
+
+</div>
+
+@endif
 
 @if (Auth::check())
 <div class="pt-15 w-4/5 m-auto">
